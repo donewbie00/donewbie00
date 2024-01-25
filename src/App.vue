@@ -1,10 +1,30 @@
 <template>
-  <header>
-    <h1>테스트 화면입니다.</h1>
-  </header>
+  <AppHeader
+    v-bind:appTitle="message"
+    v-on:change="changeMessage"
+  />
+  <div></div>
 </template>
 
 <script>
+import AppHeader from './components/AppHeader.vue'
+
+export default {
+  name: 'App',
+  components: {
+      AppHeader
+  },
+  data(){
+    return {
+      message: '앱 헤더 컴포넌트'
+    }
+  },
+  methods: {
+    changeMessage(){
+      this.message = '변경됨'
+    }
+  }
+}
 </script>
 
 <style>

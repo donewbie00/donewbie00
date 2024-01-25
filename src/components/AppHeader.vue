@@ -1,17 +1,19 @@
 <template>
-    <AppHeader></AppHeader>
-    <div></div>
+    <header>
+        <h1>{{ appTitle }}</h1>
+				<button @click="changeTitle">변경</button>
+    </header>
 </template>
 
 <script>
-import AppHeader from './components/AppHeader.vue'
-
-export default {
-    name: 'App',
-    components: {
-        AppHeader
-    }
-}
+	export default {
+			props: ['appTitle'],
+			methods: {
+				changeTitle(){
+					this.$emit('change');
+				}
+			}
+	}
 </script>
 
 <style>
